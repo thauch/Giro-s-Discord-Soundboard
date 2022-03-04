@@ -45,7 +45,7 @@ const client = new Discord.Client({ intents: 641 });
 // client.commands = new Discord.Collection();
 // client.aliases = new Discord.Collection();
 
-client.login(`ODgzMTYwNzk4Njc4MTE4NDMw.YTF5lg.4kRRAKKC9Mgj7Eb75FT9IENsFO4`);
+client.login(``);
 
 client.on('ready', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
