@@ -1,0 +1,43 @@
+<select id="userSelect">
+  {{#each users}}
+    <option value={{@index}}>{{this.user.username}}</option>
+  {{/each}}
+</select>
+
+<span>
+  <input type="range" min="1" max="100" value="100" id="volume">
+  Volume: <span id="currentVolume"></span>
+</span>
+
+<button>Stop</button>
+<br>
+
+<ul>
+  {{#each files}}
+    <button id="{{.}}">{{.}}</button>
+  {{/each}}
+
+</ul>
+
+<script>
+  var slider = document.getElementById("volume");
+  var output = document.getElementById("currentVolume");
+  output.innerHTML = slider.value;
+  slider.oninput = function() {
+    output.innerHTML = this.value;
+  }
+
+  $('button').click(function(){
+    if (this.id === "stop") {
+      $.get('/stop');
+    }
+    else {
+      {{!-- console.log(this.id); --}}
+      userSelection = document.getElementById("userSelect");
+      volume = document.getElementById("volume");
+      {{!-- console.log(userSelection.value); --}}
+      console.log(volume.value);
+      $.get('/play?file='+this.id+'&user='+userSelection.value+'&volume='+volume.value);
+    }
+  });
+</script>

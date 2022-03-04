@@ -1,0 +1,10 @@
+button {
+    font-size: 0.8rem;
+    margin: 4px;
+    padding: 4px;
+    list-style: none
+}
+
+ul {
+    padding: 0;
+}
