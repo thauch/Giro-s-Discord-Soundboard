@@ -32,11 +32,8 @@
       $.get('/stop');
     }
     else {
-      {{!-- console.log(this.id); --}}
       userSelection = document.getElementById("userSelect");
       volume = document.getElementById("volume");
-      {{!-- console.log(userSelection.value); --}}
-      console.log(volume.value);
       $.get('/play?file='+this.id+'&user='+userSelection.value+'&volume='+volume.value);
     }
   });
